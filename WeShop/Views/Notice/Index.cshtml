@@ -1,0 +1,59 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>公告栏</title>
+    <link href="~/css/Cbase.css" rel="stylesheet" />
+    <link href="~/css/index.css" rel="stylesheet" />
+    <script src="~/scripts/jquery-1.7.2.min.js"></script>
+    <script src="~/scripts/base.js"></script>
+    <script src="~/scripts/index.js"></script>
+</head>
+<body>
+    <div class="ftop">
+        <a class="back" onClick="javascript:history.back(-1);"><img src="images/icon_03.png"></a>
+        <h2>最新公告</h2>
+        <a class="comea">&nbsp;</a>
+        <div style="clear: both;"></div>
+    </div>
+    <!--ftop开始-->
+    <div class="notice">
+        <ul>
+            @foreach (var item in ViewBag.notices)
+            {
+                <li>
+                    <a href="gonggao_xq.html">
+                        <h2><span>@item.Title</span><i>@item.ModiTime</i></h2>
+                        <p>@item.Body</p>
+                    </a>
+                </li>
+            }
+            @*<li>
+                <a href="gonggao_xq.html">
+                    <h2><span>关于国庆发货通知关于国庆发货通知关于国庆发货通知关于国庆发货通知</span><i>2016.03.04</i></h2>
+                    <p>冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补药材，其营养成分高于人参，可入药，也可食用，是上乘的佳肴，具有很高的营养价值。</p>
+                </a>
+            </li>*@
+            @*<li>
+                <a href="gonggao_xq.html">
+                    <h2><span>关于国庆发货通知关于国庆发货通知关于国庆发货通知关于国庆发货通知</span><i>2016.03.04</i></h2>
+                    <p>冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补药材，其营养成分高于人参，可入药，也可食用，是上乘的佳肴，具有很高的营养价值。</p>
+                </a>
+            </li>
+            <li>
+                <a href="gonggao_xq.html">
+                    <h2><span>关于国庆发货通知关于国庆发货通知关于国庆发货通知关于国庆发货通知</span><i>2016.03.04</i></h2>
+                    <p>冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补药材，其营养成分高于人参，可入药，也可食用，是上乘的佳肴，具有很高的营养价值。</p>
+                </a>
+            </li>*@
+        </ul>
+    </div>
+
+</body>
+</html>
