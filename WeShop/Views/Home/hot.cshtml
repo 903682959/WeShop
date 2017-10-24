@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "hot";
+    Layout = "~/Views/Layout/LayoutPage.cshtml";
+}
+
+<!--ftop开始-->
+<div class="ftop">
+    <div class="index_search">
+        @Html.Action("Select", "Layout");
+        <p>
+            <a href="/Notice/Index">
+                <img src="~/images/icon_05.png" />
+                <sup>⭐</sup>
+            </a>
+        </p>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+<!--ftop开始-->
+<!--banner start-->
+<div class="swiper-container index_banner">
+    <div class="swiper-wrapper">
+        @foreach (var item in ViewBag.Banner)
+        {
+            <div class="swiper-slide">
+                <a>
+                    <img src="~/images/@item.Image" alt="">
+                </a>
+            </div>
+        }
+    </div>
+    <div class="swiper-pagination swiper-index"></div>
+</div>
+<script>
+	var swiper1 = new Swiper('.index_banner', {
+		pagination: '.swiper-index',
+		paginationClickable: true,
+		loop: true,
+		autoplay: 4000,
+	});
+</script>
+<!--banner over-->
+<div class="index_knowledge">
+    <img src="~/images/icon_0902.png" />
+    <div class="swiper-container dlist">
+        <div class="swiper-wrapper">
+            <a class="swiper-slide" href="gonggao_xq.html"><i>最新</i>水果中含丰富的抗氧化物质维生素E和微量元素，可以滋养皮肤，其美容效果可不容忽视</a>
+            <a class="swiper-slide" href="gonggao_xq.html"><i>最热</i>水果除了含有我们已知的营养素外，还富含大量天然植物化合物</a>
+            <a class="swiper-slide" href="gonggao_xq.html"><i>最新</i>由于水果中含有很多维生素，微量元素，所以还可以用来预防疾病</a>
+        </div>
+    </div>
+</div>
+<script>
+  var swiper1 = new Swiper('.dlist', {
+    loop: true,
+    autoplay: 4000,
+    direction : 'vertical'
+  });
+</script>
+<div class="index_main">
+    <p class="index_mtitle"> <a class="on" href="/Home/index">最新</a> <a href="/Home/hot">热销</a> <a href="index_xianshi.html">啊啊</a></p>
+    <ul>
+       
+        @foreach (var items in ViewBag.Product)
+        {
+            <li>
+                <a href="product_xq.html"><img src="~/images/@items.images"></a>
+                <div class="product_text">
+                    <h2>
+                        <p>@items.Name</p>
+
+                        <span><img src="~/images/icon_06.png" /><img src="~/images/icon_06.png" /><img src="~/images/icon_06.png" /><img src="~/images/icon_06.png" /><img src="~/images/icon_07.png"></span>
+                    </h2>
+                    <p>@items.describe</p>
+                    <h3>
+                        <p><i>￥</i><b>@items.price</b><span>特级</span><span>甄选</span></p>
+                        <a href="product_xq.html">立即购买</a>
+                    </h3>
+                </div>
+            </li>
+        }
+</div>
+

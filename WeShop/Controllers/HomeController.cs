@@ -28,11 +28,19 @@ namespace WeShop.Controllers
             var BannerResult = BannerService.GetEntities(x => true);
             ViewBag.Banner = BannerResult.ToList();
 
+            
             //最新  可以根据时间的排序来查询出前几条
             var Productresult = ProductService.GetEntities(x => true).OrderByDescending(x => x.Time).Take(3);
-            //Productresult.OrderByDescending();
-            //Productresult.Take(3);    //表示前3条记录
-            //var Productresult = ProductService.GetEntities(x => true).TakeWhile();
+            ViewBag.Product = Productresult.ToList();
+            return View();
+        }
+        public ActionResult hot()
+        {
+            //1:查询Banner，从数据库中查询
+            var BannerResult = BannerService.GetEntities(x => true);
+            ViewBag.Banner = BannerResult.ToList();
+            //查询最热  根据产品中的销量
+            var Productresult = ProductService.GetEntities(x => true).OrderByDescending(x=>x.sales).Take(3);
             ViewBag.Product = Productresult.ToList();
             return View();
         }

@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/LayoutPage.cshtml";
+}
+
+<h2>产品类别</h2>
+@Html.Action("Select", "Layout");
+<!--分类页面-->
+<!--分类-->
+<div class="fenlei">
+    <div class="fen-nav">
+        <ul>
+            <li class="on">水果大王</li>
+            @*<li>冬虫夏草</li>
+            <li>冬虫夏草</li>
+            <li>冬虫夏草</li>*@
+            @foreach (var s in ViewBag.Sorts)
+            {
+                <li>@s.Name</li>
+            }
+        </ul>
+    </div>
+    <div class="fen-box">
+        <div class="fff">
+            
+            @foreach (var item in ViewBag.Product)
+            {
+                <div class="fenlist">
+                    <ul>
+                        
+                            @*@foreach (var items in ViewBag.Product)
+                            {*@
+                                <li>
+                                    <a class="imga" href="search_list.html"><img src="images/img_012.jpg"></a>
+                                    <a class="txta" href="search_list.html">
+                                        <span>@item.Name</span>
+                                        <i>@item.contents</i>
+                                    </a>
+                                </li>
+                            @*}*@
+                           
+                    </ul>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+<!--分类-->
+<!--分类页面-->
+<!--fixft开始-->
+<div class="fixft">
+    <a href="index.html"><span><img src="images/navicon_45.png" class="img1"><img src="images/navicon_28.png" class="img2"></span> <i>首页</i></a>
+    <a href="publish.html" class="current"><span><img src="images/navicon_48.png" class="img1"><img src="images/navicon_30.png" class="img2"></span> <i>分类</i></a>
+    <a href="shopcar.html"><span><img src="images/navicon_50.png" class="img1"><img src="images/navicon_32.png" class="img2"><em>12</em></span> <i>购物车</i></a>
+    <a href="center.html"><span><img src="images/navicon_42.png" class="img1"><img src="images/navicon_35.png" class="img2"></span> <i>我的</i></a>
+</div>
+<!--fixft结束-->
+
+
+<script>
+    var m=$(window).height()-98;
+    $(".fen-nav,.fen-box").css("height",m+"px");
+
+
+    var $lii = $(".fenlei .fen-nav li");
+    $(".fenlei .fen-box .fenlist").hide();
+    $(".fenlei .fen-box .fenlist").first().show();
+    $lii.click(function(){
+        var n = $(this).index();
+        var h = $(this).height();
+        //alert(h)
+        var sunh = n * h-1;
+        $(".fen-nav").animate({"scrollTop":sunh+"px"},1000)
+
+
+        $(this).addClass("on").siblings().removeClass("on");
+        var indexx = $lii.index(this);
+        $('.fenlei .fen-box').animate({scrollTop: '0px'},500);
+        $(".fenlei .fen-box .fff .fenlist").hide();
+        $(".fenlei .fen-box .fff .fenlist").eq(indexx).show();
+    })
+    var w=$(".fenli li img").width();
+    $(".fenli li img").height(w);
+    $(window).resize(function(){
+        var w=parseInt($(".fenli li img").width());
+        $(".fenli li img").height(w);
+    })
+
+</script>
+
+

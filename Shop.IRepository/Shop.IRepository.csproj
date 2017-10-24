@@ -45,6 +45,7 @@
     <Compile Include="InoticeRepository.cs" />
     <Compile Include="IProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ISortRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Shop.Model\Shop.Model.csproj">
