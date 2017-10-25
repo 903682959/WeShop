@@ -21,6 +21,7 @@ namespace Shop.Model
         public virtual DbSet<Payment> Payment { get; set; }
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<ProReview> ProReview { get; set; }
+        public virtual DbSet<ProSort> ProSort { get; set; }
         public virtual DbSet<ShopCart> ShopCart { get; set; }
         public virtual DbSet<Sort> Sort { get; set; }
         public virtual DbSet<Stock> Stock { get; set; }
@@ -71,6 +72,11 @@ namespace Shop.Model
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<Product>()
+                .HasMany(e => e.ProSort)
+                .WithRequired(e => e.Product)
+                .HasForeignKey(e => e.ProCode);
+
+            modelBuilder.Entity<Product>()
                 .HasMany(e => e.ShopCart)
                 .WithRequired(e => e.Product)
                 .HasForeignKey(e => e.ProCode);
@@ -79,11 +85,6 @@ namespace Shop.Model
                 .HasOptional(e => e.Stock)
                 .WithRequired(e => e.Product)
                 .WillCascadeOnDelete();
-
-            modelBuilder.Entity<Product>()
-                .HasMany(e => e.Sort)
-                .WithMany(e => e.Product)
-                .Map(m => m.ToTable("ProSort").MapLeftKey("ProCode").MapRightKey("SortCode"));
 
             modelBuilder.Entity<Product>()
                 .HasMany(e => e.Tag)

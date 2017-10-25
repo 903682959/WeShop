@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Shop.Model;
-using Shop.IRepository;
 
-namespace Shop.Repository
+namespace Shop.IService
 {
-  public  class SortRepository:BaseRepository<Sort>,ISortRepository
+    public interface  IProSortService:IBaseService<ProSort>
     {
     }
 }

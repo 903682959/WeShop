@@ -8,7 +8,7 @@ using Shop.IRepository;
 
 namespace Shop.Repository
 {
-  public  class SortRepository:BaseRepository<Sort>,ISortRepository
+    class ProSortRepository:BaseRepository<ProSort>,IProSortRepository
     {
     }
 }

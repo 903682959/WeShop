@@ -12,7 +12,7 @@ namespace Shop.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Sort()
         {
-            Product = new HashSet<Product>();
+            ProSort = new HashSet<ProSort>();
         }
 
         [Key]
@@ -26,6 +26,6 @@ namespace Shop.Model
         public string UpCode { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Product { get; set; }
+        public virtual ICollection<ProSort> ProSort { get; set; }
     }
 }

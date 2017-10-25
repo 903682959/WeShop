@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A0E1AD0C-FAE8-4A2F-8FD9-32CAEAEAC6A0}</ProjectGuid>
+    <ProjectGuid>{14F10E51-566F-4689-A9F6-99294A01802D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Shop.Model</RootNamespace>
@@ -61,6 +61,7 @@
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProReview.cs" />
+    <Compile Include="ProSort.cs" />
     <Compile Include="ShopCart.cs" />
     <Compile Include="Sort.cs" />
     <Compile Include="Stock.cs" />

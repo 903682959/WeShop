@@ -44,6 +44,7 @@
     <Compile Include="IBaseService.cs" />
     <Compile Include="InoticeService.cs" />
     <Compile Include="IProductService.cs" />
+    <Compile Include="IProSortService.cs" />
     <Compile Include="ISortService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -53,7 +54,7 @@
       <Name>Shop.IRepository</Name>
     </ProjectReference>
     <ProjectReference Include="..\Shop.Model\Shop.Model.csproj">
-      <Project>{a0e1ad0c-fae8-4a2f-8fd9-32caeaeac6a0}</Project>
+      <Project>{14f10e51-566f-4689-a9f6-99294a01802d}</Project>
       <Name>Shop.Model</Name>
     </ProjectReference>
   </ItemGroup>

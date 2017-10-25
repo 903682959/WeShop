@@ -9,9 +9,9 @@ using Shop.IRepository;
 
 namespace Shop.Service
 {
-   public  class SortService : BaseService<Sort>, ISortService
+    class ProSortService : BaseService<ProSort>, IProSortService
     {
-        public SortService(IBaseRepository<Sort> ibaseRepositroy) : base(ibaseRepositroy)
+        public ProSortService(IBaseRepository<ProSort> ibaseRepositroy) : base(ibaseRepositroy)
         {
         }
     }

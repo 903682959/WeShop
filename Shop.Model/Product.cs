@@ -13,8 +13,8 @@ namespace Shop.Model
         public Product()
         {
             OrderBillChi = new HashSet<OrderBillChi>();
+            ProSort = new HashSet<ProSort>();
             ShopCart = new HashSet<ShopCart>();
-            Sort = new HashSet<Sort>();
             Tag = new HashSet<Tag>();
         }
 
@@ -34,10 +34,11 @@ namespace Shop.Model
         [StringLength(50)]
         public string contents { get; set; }
 
+        public int? sales { get; set; }
+
         [StringLength(50)]
         public string images { get; set; }
 
-        public int sales { get; set; }
         public bool? ispack { get; set; }
 
         [StringLength(50)]
@@ -52,12 +53,12 @@ namespace Shop.Model
         public virtual ProReview ProReview { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProSort> ProSort { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ShopCart> ShopCart { get; set; }
 
         public virtual Stock Stock { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sort> Sort { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tag> Tag { get; set; }

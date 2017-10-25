@@ -54,6 +54,7 @@
     <Compile Include="DbContextFactory.cs" />
     <Compile Include="NoticeRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProSortRepository.cs" />
     <Compile Include="ProuductRepository.cs" />
     <Compile Include="SortRepository.cs" />
   </ItemGroup>
@@ -63,7 +64,7 @@
       <Name>Shop.IRepository</Name>
     </ProjectReference>
     <ProjectReference Include="..\Shop.Model\Shop.Model.csproj">
-      <Project>{A0E1AD0C-FAE8-4A2F-8FD9-32CAEAEAC6A0}</Project>
+      <Project>{14f10e51-566f-4689-a9f6-99294a01802d}</Project>
       <Name>Shop.Model</Name>
     </ProjectReference>
   </ItemGroup>

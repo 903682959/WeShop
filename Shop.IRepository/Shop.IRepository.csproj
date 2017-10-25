@@ -44,12 +44,13 @@
     <Compile Include="IBaseRepository.cs" />
     <Compile Include="InoticeRepository.cs" />
     <Compile Include="IProductRepository.cs" />
+    <Compile Include="IProSortRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ISortRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Shop.Model\Shop.Model.csproj">
-      <Project>{a0e1ad0c-fae8-4a2f-8fd9-32caeaeac6a0}</Project>
+      <Project>{14f10e51-566f-4689-a9f6-99294a01802d}</Project>
       <Name>Shop.Model</Name>
     </ProjectReference>
   </ItemGroup>

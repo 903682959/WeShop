@@ -3,47 +3,88 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Layout/LayoutPage.cshtml";
 }
+@*<h2>产品类别</h2>*@
+<script src="~/scripts/jquery-1.7.2.min.js"></script>
+<script>
+    $(function () {
+        $(".on").click(function () {
+            //alert($(this).attr("dataid"))
+            $.ajax({
+                type: "post",
+                url:"@Url.Action("ProSortdata", "ProSort")",
+                data: {"id":$(this).attr("dataid")},
+                success: function (data) {
+                    //alert(data)
+                    $(".fenlist").html('<ul id="fl">' + data + '</ul>')
+                }
+            })
+        })
+        $(".con").click(function () {
+            //alert($(this).attr("dataid"))
+            $.ajax({
+                type: "post",
+                url: "@Url.Action("ProSortdata", "ProSort")",
+                data: { "id": $(this).attr("dataid") },
+            success: function (data) {
+                $(".fenlist").html('<ul id="fl">' + data + '</ul>')
+            }
+        })
+    })
+    })
+</script>
+<!--ftop开始-->
+<div class="ftop">
+    <div class="index_search index_search01" style="padding-left: 10px;">
+        <div style="left:0px; width:100%;" onclick="document.location='#'">
+            <input type="text" placeholder="请输入您要搜索的产品">
+            <input type="button" value=" ">
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+<!--ftop开始-->
 
-<h2>产品类别</h2>
-@Html.Action("Select", "Layout");
-<!--分类页面-->
 <!--分类-->
 <div class="fenlei">
     <div class="fen-nav">
         <ul>
-            <li class="on">水果大王</li>
-            @*<li>冬虫夏草</li>
-            <li>冬虫夏草</li>
-            <li>冬虫夏草</li>*@
-            @foreach (var s in ViewBag.Sorts)
-            {
-                <li>@s.Name</li>
+            @{int i = 0;
+                foreach (var item in ViewBag.Sortresult)
+                {
+                    if (i == 0)
+                    {
+                        <li class="on" dataid="@item.Code">@item.Name</li>
+                    }
+                    else
+                    {
+                        <li class="con" dataid="@item.Code">@item.Name</li>
+                    }
+                    i++;
+                }
             }
         </ul>
     </div>
     <div class="fen-box">
-        <div class="fff">
+        <div class="fff" >
             
-            @foreach (var item in ViewBag.Product)
-            {
+          
                 <div class="fenlist">
-                    <ul>
-                        
-                            @*@foreach (var items in ViewBag.Product)
-                            {*@
-                                <li>
-                                    <a class="imga" href="search_list.html"><img src="images/img_012.jpg"></a>
-                                    <a class="txta" href="search_list.html">
-                                        <span>@item.Name</span>
-                                        <i>@item.contents</i>
-                                    </a>
-                                </li>
-                            @*}*@
-                           
+                    <ul id="fl">
+                       
+                        @foreach (var item in ViewBag.s)
+                        {
+                            <li>
+                                <a class="imga" href="search_list.html"><img src="images/img_012.jpg"></a>
+                                <a class="txta" href="search_list.html">
+                                    <span>@item.Pname</span>
+                                    <i>@item.Pdesc</i>
+                                </a>
+                            </li>
+                        }
                     </ul>
                 </div>
-            }
 
+          
         </div>
     </div>
 </div>
@@ -51,12 +92,7 @@
 <!--分类-->
 <!--分类页面-->
 <!--fixft开始-->
-<div class="fixft">
-    <a href="index.html"><span><img src="images/navicon_45.png" class="img1"><img src="images/navicon_28.png" class="img2"></span> <i>首页</i></a>
-    <a href="publish.html" class="current"><span><img src="images/navicon_48.png" class="img1"><img src="images/navicon_30.png" class="img2"></span> <i>分类</i></a>
-    <a href="shopcar.html"><span><img src="images/navicon_50.png" class="img1"><img src="images/navicon_32.png" class="img2"><em>12</em></span> <i>购物车</i></a>
-    <a href="center.html"><span><img src="images/navicon_42.png" class="img1"><img src="images/navicon_35.png" class="img2"></span> <i>我的</i></a>
-</div>
+
 <!--fixft结束-->
 
 
@@ -79,7 +115,7 @@
         $(this).addClass("on").siblings().removeClass("on");
         var indexx = $lii.index(this);
         $('.fenlei .fen-box').animate({scrollTop: '0px'},500);
-        $(".fenlei .fen-box .fff .fenlist").hide();
+       // $(".fenlei .fen-box .fff .fenlist").hide();
         $(".fenlei .fen-box .fff .fenlist").eq(indexx).show();
     })
     var w=$(".fenli li img").width();
