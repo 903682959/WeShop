@@ -8,19 +8,16 @@
 <script>
     $(function () {
         $(".on").click(function () {
-            //alert($(this).attr("dataid"))
             $.ajax({
                 type: "post",
                 url:"@Url.Action("ProSortdata", "ProSort")",
                 data: {"id":$(this).attr("dataid")},
                 success: function (data) {
-                    //alert(data)
                     $(".fenlist").html('<ul id="fl">' + data + '</ul>')
                 }
             })
         })
         $(".con").click(function () {
-            //alert($(this).attr("dataid"))
             $.ajax({
                 type: "post",
                 url: "@Url.Action("ProSortdata", "ProSort")",
@@ -74,8 +71,9 @@
                         @foreach (var item in ViewBag.s)
                         {
                             <li>
-                                <a class="imga" href="search_list.html"><img src="images/img_012.jpg"></a>
-                                <a class="txta" href="search_list.html">
+                                @*<img src="~/images/icon_010.png" />*@
+                                <a class="imga" href="/Product/Index/?id=@item.SortCode"><img src="~/images/img_012.jpg"></a>
+                                <a class="txta" href="/Product/Index/?id=@item.SortCode">
                                     <span>@item.Pname</span>
                                     <i>@item.Pdesc</i>
                                 </a>

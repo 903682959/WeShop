@@ -44,6 +44,7 @@
     <Compile Include="IBaseRepository.cs" />
     <Compile Include="InoticeRepository.cs" />
     <Compile Include="IProductRepository.cs" />
+    <Compile Include="IProReviewRepository.cs" />
     <Compile Include="IProSortRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ISortRepository.cs" />

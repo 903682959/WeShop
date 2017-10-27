@@ -1,0 +1,61 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Price</title>
+    <link href="~/css/Cbase.css" rel="stylesheet" />
+    <link href="~/css/index.css" rel="stylesheet" />
+    <link href="~/css/swiper.min.css" rel="stylesheet" />
+    <script src="~/scripts/jquery-1.7.2.min.js"></script>
+    <script src="~/scripts/base.js"></script>
+    <script src="~/scripts/swiper.min.js"></script>
+    <script src="~/scripts/index.js"></script>
+</head>
+<body>
+    <!--ftop开始-->
+    <div class="ftop">
+        <div class="index_search index_search01" style="padding-left: 10px;">
+            @*<div style="left:0px; width:100%;" onclick="document.location='#'">
+                <input type="text" placeholder="请输入您要搜索的产品">*@
+            @Html.Action("Select", "Layout")
+            <input type="button" value=" ">
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+
+    <!--ftop开始-->
+    <!--ftop开始-->
+    <div class="search_list">
+        <p><a class="on" href="/Product/Index"><span>综合</span></a><a><span class="bg">价格</span></a></p>
+        <ul>
+            @foreach (var item in ViewBag.price)
+            {
+                <li>
+                    <a href="product_xq.html">
+                        <img src="~/images/@item.images">
+
+                        <div class="search_item">
+                            <p>@item.Name</p>
+                            <h2><i>￥</i><b>@item.price</b><span>库存'"+@item.sales+"'件</span></h2>
+                        </div>
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+
+    <script>
+    $(".search_list ul li a img").each(function(){
+        var w = $(this).width();
+        $(this).height(w+"px");
+    })
+
+    </script>
+</body>
+</html>

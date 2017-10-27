@@ -45,6 +45,7 @@
     <Compile Include="noticeService.cs" />
     <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProReviewService.cs" />
     <Compile Include="ProSortService.cs" />
     <Compile Include="SortService.cs" />
   </ItemGroup>
