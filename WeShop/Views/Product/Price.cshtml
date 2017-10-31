@@ -37,8 +37,8 @@
             @foreach (var item in ViewBag.price)
             {
                 <li>
-                    <a href="product_xq.html">
-                        <img src="~/images/@item.images">
+                    <a href="/Detail/index/?id=@item.Code">
+                        <img src="~/images/@item.images/?id=@item.Code">
 
                         <div class="search_item">
                             <p>@item.Name</p>

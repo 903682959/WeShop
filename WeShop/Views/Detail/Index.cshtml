@@ -29,17 +29,27 @@
     <div class="ftop">
         <a class="back" onClick="javascript:history.back(-1);"><img src="images/icon_03.png"></a>
         <h2>产品详情</h2>
-        <a style="color:#000" class="comea">分享有礼</a>
+        @*<a style="color:#000" class="comea">分享有礼</a>*@
         <div style="clear: both;"></div>
     </div>
     <!--ftop开始--> 
     <!---banner start--->
+
     <div class="product_box">
         <div class="swiper-container product_details">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><a><img src="images/img_01.jpg" alt=""></a></div>
+                @*<div class="swiper-slide"><a><img src="images/img_01.jpg" alt=""></a></div>
                 <div class="swiper-slide"><a><img src="images/img_03.jpg" alt=""></a></div>
-                <div class="swiper-slide"><a><img src="images/img_08.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a><img src="images/img_08.jpg" alt=""></a></div>*@
+                @foreach (var item in ViewBag.product)
+                {
+                    <div class="swiper-slide">
+                <a>
+                        <img src="~/images/@item.images" alt="">
+
+                </a>
+                    </div>
+                }
             </div>
         </div>
         <div class="pro_text">
