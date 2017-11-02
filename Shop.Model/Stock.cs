@@ -14,6 +14,7 @@ namespace Shop.Model
 
         public int? num { get; set; }
 
+        public int? sale { get; set; }
         [Key]
         [StringLength(50)]
         public string pcode { get; set; }

@@ -49,6 +49,7 @@
                 foreach (var item in ViewBag.Sortresult)
                 {
                     if (i == 0)
+
                     {
                         <li class="on" dataid="@item.Code">@item.Name</li>
                     }
@@ -69,7 +70,7 @@
                         {
                             <li>
                                 @*<img src="~/images/icon_010.png" />*@
-                                <a class="imga" href="/Product/Index/?id=@item.SortCode"><img src="~/images/img_012.jpg"></a>
+                                <a class="imga" href="/Product/Index/?id=@item.SortCode"><img src="/images/@item.Pimg"></a>
                                 <a class="txta" href="/Product/Index/?id=@item.SortCode">
                                     <span>@item.Pname</span>
                                     <i>@item.Pdesc</i>

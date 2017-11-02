@@ -39,6 +39,8 @@ namespace Shop.Model
         [StringLength(50)]
         public string images { get; set; }
 
+        [StringLength(50)]
+        public string aimg { get; set; }
         public bool? ispack { get; set; }
 
         [StringLength(50)]

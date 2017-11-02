@@ -23,6 +23,7 @@ namespace WeShop.Controllers
         }
         public ActionResult Price()
         {
+
             var  product = Productresult.GetEntities(x =>true).OrderByDescending(x=>x.price).ToList();
             ViewBag.price = product;
             return View();

@@ -37,8 +37,9 @@ namespace WeShop.Controllers
             foreach (ProSort item in s)
             {
                 shtml += @"<li>
-                            <a class='imga' href='#'><img src='~/images/'"+item.Pimg+@"''></a>
-                              <a class='txta' href='search_list.html'>
+
+                            <a class='imga' href='/Product/Index'><img src='/images/" + item.Pimg+ @"'></a>
+                              <a class='txta' href='/Product/Index'>
                                 <span>" + item.Pname + @"</span>
                                 <i>" + item.Pdesc + @"</i>
                             </a>

@@ -58,6 +58,7 @@
     <Compile Include="ProReviewRepository.cs" />
     <Compile Include="ProSortRepository.cs" />
     <Compile Include="ProuductRepository.cs" />
+    <Compile Include="ShopCartRepository.cs" />
     <Compile Include="SortRepository.cs" />
     <Compile Include="StockRepository.cs" />
   </ItemGroup>

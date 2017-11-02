@@ -2,7 +2,7 @@
 @{
     Layout = null;
 }
-
+@using WeShop.Controllers
 <!DOCTYPE html>
 
 <html>
@@ -46,14 +46,33 @@
                     <div class="swiper-slide">
                 <a>
                         <img src="~/images/@item.images" alt="">
-
+                   
                 </a>
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <a>
+                            <img src="~/images/@item.aimg" alt="">
+
+                        </a>
                     </div>
                 }
             </div>
         </div>
         <div class="pro_text">
-            <h2>
+            @foreach (var item in ViewBag.ck)
+            {
+                <h2>
+                        <p>@item.pname</p>
+                        <span><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_07.png"><img src="images/icon_07.png"></span>
+                    </h2>
+                    <p>@item.details</p>
+                    <div class="pro_det">
+                        <h3><i>￥</i><b>@item.price</b><span>特级</span><span>甄选</span></h3>
+                        <p><span>库存：@item.stock </span><i></i><span>月销量：@item.sale</span></p>
+                    </div>
+            }
+            @*<h2>
                 <p>特级云南冬虫夏草冬虫夏草又名虫草冬虫夏草又名虫草</p>
                 <span><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_06.png"><img src="images/icon_07.png"><img src="images/icon_07.png"></span>
             </h2>
@@ -61,7 +80,7 @@
             <div class="pro_det">
                 <h3><i>￥</i><b>188.00</b><span>特级</span><span>甄选</span></h3>
                 <p><span>库存：616 </span><i></i><span>月销量：1988笔</span></p>
-            </div>
+            </div>*@
         </div>
     </div>
     <script>
@@ -108,17 +127,25 @@
     </script>
     <div class="pro_description modular">
         <h2><span>商品描述</span></h2>
-        <div class="miaoshu">
-            冬虫夏草为虫体与菌座相连而成，全长9～12厘米。虫体如三眠老蚕，长约3～6厘米，粗约0.4～0.7厘米。外表呈深黄色，粗糙，背部有多数横皱纹，腹面有足8对，位于虫体中部的4对明显易见。
-        </div>
+        @foreach (var item in ViewBag.ck)
+        {
+            <div class="miaoshu">
+              @item.describe
+            </div>
+        }
+
     </div>
     <div class="pro_description modular">
         <h2><span>基本参数</span></h2>
         <div class="canshu">
             <table>
-                <tr><td>品色</td><td>红色</td></tr>
-                <tr><td>年份</td><td>1896</td></tr>
-                <tr><td>产地</td><td>中国云南</td></tr>
+                @foreach (var item in ViewBag.ck)
+                {
+                    <tr><td>型号</td><td>@item.pcode</td></tr>
+                    <tr><td>名称</td><td>@item.pname</td></tr>
+                    <tr><td>上架日期</td><td>@item.time</td></tr>
+                }
+                
             </table>
         </div>
     </div>
