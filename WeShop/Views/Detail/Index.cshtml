@@ -69,7 +69,7 @@
                     <p>@item.details</p>
                     <div class="pro_det">
                         <h3><i>￥</i><b>@item.price</b><span>特级</span><span>甄选</span></h3>
-                        <p><span>库存：@item.stock </span><i></i><span>月销量：@item.sale</span></p>
+                        <p><span class="kc">库存：@item.stock </span><i></i><span>月销量：@item.sale</span></p>
                     </div>
             }
             @*<h2>
@@ -101,7 +101,7 @@
 	$(function(){
         var jian = $(".jian");
         var jia = $(".jia");
-        var kunchun = 10; //当库存不足时，可以提醒用户。
+        var kunchun =$(".kc").val; //当库存不足时，可以提醒用户。
         jia.click(function() {
             var n = $(this).siblings("input").val();
             n++;
@@ -149,12 +149,16 @@
             </table>
         </div>
     </div>
-    <div class="pro_description modular">
+    @*<div class="pro_description modular">
         <h2><span>更多图片</span></h2>
         <div class="tu_pian">
             <img src="images/img_04.jpg"><img src="images/img_07.jpg"><img src="images/img_08.jpg">
+            @foreach (var item in ViewBag.ck)
+            {
+                <img src="images/@item.">
+            }
         </div>
-    </div>
+    </div>*@
     <div class="pro_description modular">
         <h2><span>用户评价</span></h2>
         <div class="pingjia">
