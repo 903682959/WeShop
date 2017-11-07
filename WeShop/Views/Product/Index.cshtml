@@ -16,25 +16,71 @@
     <script src="~/scripts/base.js"></script>
     <script src="~/scripts/swiper.min.js"></script>
     <script src="~/scripts/index.js"></script>
+
+
+    @*<script src="~/scripts/jquery-1.7.2.min.js"></script>*@
+    @*<script>
+    $(function () {
+        $(".on").click(function () {
+            //alert($(this).attr("dataid"));
+   
+        })
+        $(".con").click(function () {
+            //alert($(this).attr("dataid"));
+            $.ajax({
+                type: "post",
+                url: "@Url.Action("price", "Product")",
+                data: { "cid": $(this).attr("dataid") },
+            success: function (data) {
+                $(".fenlist1").html(data)
+            }
+        })
+    })
+    })
+    </script>*@
+    <script>
+        $(function () {
+
+            $(".search_list p a").click(function () {
+                //alert($(this).attr("dataid"));
+                $(".search_list p a").removeClass()
+                $(this).attr("class", "on")
+                $.ajax({
+                    type: "post",
+                    url: "@Url.Action("Price", "Product")",
+                    data: { "cid": $(this).attr("dataid"), "id": $(this).attr("datasid") },
+                    success: function (data) {
+                        $("#fl").html(data)
+                        $(".search_list ul li a img").each(function () {
+                            var w = $(this).width();
+                            $(this).height(w + "px");
+                        })
+                    }
+                })
+            })
+            //$(".dw").click(function () {
+            //    location.href='/sort/list/'+$("#select").val()
+            //})
+        })</script>
 </head>
 <body>
-   
-        <!--ftop开始-->
-        <div class="ftop">
-            <div class="index_search index_search01" style="padding-left: 10px;">
-                @*<div style="left:0px; width:100%;" onclick="document.location='#'">
-                    <input type="text" placeholder="请输入您要搜索的产品">*@
-                @Html.Action("Select","Layout")
-                    <input type="button" value=" ">
-                </div>
+       <!--ftop开始-->
+    <div class="ftop">
+        <div class="index_search index_search01">
+            <a class="back" onClick="javascript:history.back(-1);"><img src="~/images/icon_03.png"></a>
+            <div>
+                @Html.Action("Select", "Layout")
             </div>
-            <div style="clear: both;"></div>
-        
-        <!--ftop开始-->
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--ftop开始-->
+
     <div class="search_list">
-        <p><a class="on" href="/Product/Index"><span>综合</span></a><a href="/Product/Price"><span class="bg">价格</span></a></p>
-        <ul>
-            @*<li>
+        <p><a class="on" dataid="0" datasid="@ViewBag.id"><span>综合</span></a><a class="con" dataid="1" datasid="@ViewBag.id"><span class="bg">价格</span></a></p>
+        <div class="fenlist1">
+            <ul id="fl">
+                @*<li>
                 <a href="product_xq.html">
                     <img src="images/img_010.jpg">
                     <div class="search_item">
@@ -43,22 +89,24 @@
                     </div>
                 </a>
             </li>*@
-            
-            @foreach (var item in ViewBag.product)
+                @foreach (var item in ViewBag.product)
             {
-                <li>
-                    <a href="/Detail/index/?id=@item.Code">
-                        <img src="/images/@item.images">
+                    <li>
+                        <a href="/Detail/index/?id=@item.Code">
+                            <img src="/images/@item.images">
 
-                        @*<img src="~/images/238.jpg" />*@
-                        <div class="search_item">
-                            <p>@item.Name</p>
-                            <h2><i>￥</i><b>@item.price</b></h2>
-                        </div>
-                    </a>
-                </li>
-            }
-        </ul>
+                            @*<img src="~/images/238.jpg" />*@
+                            <div class="search_item">
+                                <p>@item.Name</p>
+                                <h2><i>￥</i><b>@item.price</b></h2>
+                            </div>
+                        </a>
+                    </li>
+                }
+               
+            </ul>
+        </div>
+        
     </div>
 
     <script>
