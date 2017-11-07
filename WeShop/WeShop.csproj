@@ -189,6 +189,24 @@
     <Content Include="images\apple1.jpg" />
     <Content Include="images\apple2.jpg" />
     <Content Include="images\banner.jpg" />
+    <Content Include="images\centericon_03.png" />
+    <Content Include="images\centericon_06.png" />
+    <Content Include="images\centericon_11.png" />
+    <Content Include="images\centericon_14.png" />
+    <Content Include="images\centericon_19.png" />
+    <Content Include="images\centericon_22.png" />
+    <Content Include="images\centericon_24.png" />
+    <Content Include="images\centericon_26.png" />
+    <Content Include="images\centericon_29.png" />
+    <Content Include="images\centericon_36.png" />
+    <Content Include="images\centericon_40.png" />
+    <Content Include="images\centericon_43.png" />
+    <Content Include="images\centericon_48.png" />
+    <Content Include="images\centericon_51.png" />
+    <Content Include="images\centericon_56.png" />
+    <Content Include="images\centericon_59.png" />
+    <Content Include="images\centericon_63.png" />
+    <Content Include="images\centericon_65.png" />
     <Content Include="images\icon_003.png" />
     <Content Include="images\icon_01.png" />
     <Content Include="images\icon_010.png" />
@@ -282,6 +300,7 @@
     <Compile Include="Controllers\FamilyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LayoutController.cs" />
+    <Compile Include="Controllers\MyController.cs" />
     <Compile Include="Controllers\NoticeController.cs" />
     <Compile Include="Controllers\OAuthoController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -312,6 +331,7 @@
     <Content Include="Views\layout1.cshtml" />
     <Content Include="Views\Family\Index.cshtml" />
     <Content Include="Views\OAutho\JsSdkConfig.cshtml" />
+    <Content Include="Views\My\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
