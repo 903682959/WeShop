@@ -331,6 +331,7 @@
     <Content Include="Views\layout1.cshtml" />
     <Content Include="Views\Family\Index.cshtml" />
     <Content Include="Views\OAutho\JsSdkConfig.cshtml" />
+    <Content Include="Views\Layout\Index.cshtml" />
     <Content Include="Views\My\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -13,7 +13,7 @@
 <!--ftop开始-->
 <div class="shopcar">
     <ul>
-        <li>
+        @*<li>
             <p><label><input type="checkbox"></label><a href="product_xq.html"><img src="images/img_01.jpg"></a></p>
             <div class="shop_car">
                 <a href="product_xq.html">高档石斛高档石斛高档石斛高档石斛高档石斛高档石斛高档石斛高档石斛</a>
@@ -22,58 +22,26 @@
             </div>
             <img class="delete" src="~/images/icon_030.png">
             
-        </li>
-        @*<li>
-            <p><label><input type="checkbox"></label><a href="product_xq.html"><img src="images/img_013.jpg"></a></p>
-            <div class="shop_car">
-                <a href="product_xq.html">高档石斛高档石斛高档石斛高档石斛高档石斛高档石斛高档石斛高档石斛</a>
-                <span>规格：500g/袋</span>
-                <div class="shu"><span class="jian"><img src="images/icon_016.png"></span><input class="shopcart-td-num" type="text" value="1" /><span class="jia"><img src="images/icon_017.png"></span><a><i>￥</i><b>185.00</b></a></div>
-            </div>
-            <img class="delete" src="images/icon_030.png">
-        </li>
-        <li>
-            <p><label><input type="checkbox"></label><a href="product_xq.html"><img src="images/img_013.jpg"></a></p>
-            <div class="shop_car">
-                <a href="product_xq.html">高档石斛高档石斛高档石斛高档石斛高档石斛高档石斛高档石斛高档石斛</a>
-                <span>规格：500g/袋</span>
-                <div class="shu"><span class="jian"><img src="images/icon_016.png"></span><input class="shopcart-td-num" type="text" value="1" /><span class="jia"><img src="images/icon_017.png"></span><a><i>￥</i><b>185.00</b></a></div>
-            </div>
-            <img class="delete" src="images/icon_030.png">
-        </li>
-        <li>
-            <p><label><input type="checkbox"></label><a href="product_xq.html"><img src="images/img_013.jpg"></a></p>
-            <div class="shop_car">
-                <a href="product_xq.html">高档石斛高档石斛高档石斛高档石斛高档石斛高档石斛高档石斛高档石斛</a>
-                <span>规格：500g/袋</span>
-                <div class="shu"><span class="jian"><img src="images/icon_016.png"></span><input class="shopcart-td-num" type="text" value="1" /><span class="jia"><img src="images/icon_017.png"></span><a><i>￥</i><b>185.00</b></a></div>
-            </div>
-            <img class="delete" src="images/icon_030.png">
-        </li>
-        <li>
-            <p><label><input type="checkbox"></label><a href="product_xq.html"><img src="images/img_013.jpg"></a></p>
-            <div class="shop_car">
-                <a href="product_xq.html">高档石斛高档石斛高档石斛高档石斛高档石斛高档石斛高档石斛高档石斛</a>
-                <span>规格：500g/袋</span>
-                <div class="shu"><span class="jian"><img src="images/icon_016.png"></span><input class="shopcart-td-num" type="text" value="1" /><span class="jia"><img src="images/icon_017.png"></span><a><i>￥</i><b>185.00</b></a></div>
-            </div>
-            <img class="delete" src="images/icon_030.png">
-        </li>
-        <li>
-            <p><label><input type="checkbox"></label><a href="product_xq.html"><img src="images/img_013.jpg"></a></p>
-            <div class="shop_car">
-                <a href="product_xq.html">高档石斛高档石斛高档石斛高档石斛高档石斛高档石斛高档石斛高档石斛</a>
-                <span>规格：500g/袋</span>
-                <div class="shu"><span class="jian"><img src="images/icon_016.png"></span><input class="shopcart-td-num" type="text" value="1" /><span class="jia"><img src="images/icon_017.png"></span><a><i>￥</i><b>185.00</b></a></div>
-            </div>
-            <img class="delete" src="images/icon_030.png">
         </li>*@
+        @foreach (var item in ViewBag.shopcart)
+        {
+            <li>
+                <p><label><input type="checkbox"></label><a href="product_xq.html"><img src="images/img_01.jpg"></a></p>
+                <div class="shop_car">
+                    <a href="product_xq.html">@item.describe</a>
+                    <span>名称：@item.name</span>
+                    <div class="shu"><span class="jian"><img src="images/icon_016.png"></span><input class="shopcart-td-num" type="text" value="1" /><span class="jia"><img src="images/icon_017.png"></span><a><i>￥</i><b>@item.money</b></a></div>
+                </div>
+                <img class="delete" src="~/images/icon_030.png">
+
+            </li>
+        }
     </ul>
     <div class="pay">
         <label><input type="checkbox"><span>全选</span></label>
         <div class="pay_right">
-            <p><span>合计：<b>￥898.50</b></span><i>不含运费</i></p>
-            <a href="confirm_order.html">结算（5）</a>
+            <p><span>合计：<b>￥898.50</b></span><i>包邮</i></p>
+            <a href="confirm_order.html">结算</a>
         </div>
     </div>
     <!--弹窗-->

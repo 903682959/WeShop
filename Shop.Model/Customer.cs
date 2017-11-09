@@ -32,7 +32,7 @@ namespace Shop.Model
         [StringLength(30)]
         public string address { get; set; }
 
-        [StringLength(20)]
+        [StringLength(200)]
         public string image { get; set; }
 
         public virtual OrderBillFath OrderBillFath { get; set; }

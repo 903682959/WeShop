@@ -24,6 +24,11 @@ namespace Shop.Service
             return _ibaseRepository.SaveChanges();
         }
 
+        public object Exucutesqlcommand(string sql, params object[] para)
+        {
+            return _ibaseRepository.Exucutesqlcommand(sql, para);
+        }
+
         public IEnumerable<TEntity> GetEntities(Func<TEntity, bool> whereLambda)
         {
             return _ibaseRepository.SelectEntities(whereLambda);

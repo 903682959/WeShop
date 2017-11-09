@@ -34,6 +34,7 @@ namespace Shop.IRepository
         //Expression 表达式树  优化查询性能
         IEnumerable<TEntity> SelectEntitiesByPage<type>(int pageSize, int pageIndex, bool isAsc,
             Expression<Func<TEntity, type>> OrderByLambda, Expression<Func<TEntity, bool>> WhereLambda);
+        object Exucutesqlcommand(string sql, params object[] para);
     }
    
    

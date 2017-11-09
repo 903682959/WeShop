@@ -21,5 +21,6 @@ namespace Shop.IService
         //查询分页
         IEnumerable<TEntity> GetModelsByPage<type>(int pageSize, int pageIndex, bool isAsc,
            Expression<Func<TEntity, type>> OrderByLambda, Expression<Func<TEntity, bool>> WhereLambda);
+        object Exucutesqlcommand(string sql, params object[] para);
     }
 }

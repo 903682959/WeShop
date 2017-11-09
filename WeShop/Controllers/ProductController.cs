@@ -25,27 +25,6 @@ namespace WeShop.Controllers
         }
         public ActionResult Price()
         {
-           
-            //var  product = Productresult.GetEntities(x =>true).OrderByDescending(x=>x.price).ToList();
-            //ViewBag.price = product;
-           // int id = Convert.ToInt32(Request["cid"]);//从前台页面接受的值
-                                       //List<Product> p = Productresult.GetEntities(x => true).OrderByDescending(x => x.price).ToList();
-                                       //string html = "";
-                                       //foreach (Product item in p)
-                                       //{
-                                       //    html +=@"<li>
-                                       //        <a href = '/Detail/index/?id=@item.Code' >
-                                       //              <img src = '/images/"+item.images+@"'>
-                                       //            <div class='search_item'>
-                                       //                <p>"+item.Name+@"</p>
-                                       //                <h2><i>￥</i><b>"+ item.price + @"</b></h2>
-                                       //            </div>
-                                       //        </a>
-                                       //    </li>";
-                                       //}
-
-            
-            //测试
             string pcode = Request["id"];
             int id = Convert.ToInt32(Request["cid"]);
             if (id == 0)
@@ -85,8 +64,6 @@ namespace WeShop.Controllers
                 }
                 return Content(phtml);
             }
-            //return Content(Request["cid"]);
-            //return View();
         }
     }
 }

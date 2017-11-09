@@ -15,6 +15,7 @@ namespace WeShop.Filters
                 //1:获取当前请求的页面
                 string returnUrl = filterContext.HttpContext.Request.RawUrl;
                 UrlHelper url = new UrlHelper(filterContext.RequestContext);
+
                 filterContext.Result = new RedirectResult(url.Action("Index", "OAutho", new { returnUrl }));
             }
         }

@@ -17,32 +17,10 @@
     <script src="~/scripts/swiper.min.js"></script>
     <script src="~/scripts/index.js"></script>
 
-
-    @*<script src="~/scripts/jquery-1.7.2.min.js"></script>*@
-    @*<script>
-    $(function () {
-        $(".on").click(function () {
-            //alert($(this).attr("dataid"));
-   
-        })
-        $(".con").click(function () {
-            //alert($(this).attr("dataid"));
-            $.ajax({
-                type: "post",
-                url: "@Url.Action("price", "Product")",
-                data: { "cid": $(this).attr("dataid") },
-            success: function (data) {
-                $(".fenlist1").html(data)
-            }
-        })
-    })
-    })
-    </script>*@
     <script>
         $(function () {
 
             $(".search_list p a").click(function () {
-                //alert($(this).attr("dataid"));
                 $(".search_list p a").removeClass()
                 $(this).attr("class", "on")
                 $.ajax({
@@ -80,15 +58,6 @@
         <p><a class="on" dataid="0" datasid="@ViewBag.id"><span>综合</span></a><a class="con" dataid="1" datasid="@ViewBag.id"><span class="bg">价格</span></a></p>
         <div class="fenlist1">
             <ul id="fl">
-                @*<li>
-                <a href="product_xq.html">
-                    <img src="images/img_010.jpg">
-                    <div class="search_item">
-                        <p>云南特级冬虫夏草云南特级冬虫夏草</p>
-                        <h2><i>￥</i><b>185.00</b><span>月销18252笔</span></h2>
-                    </div>
-                </a>
-            </li>*@
                 @foreach (var item in ViewBag.product)
             {
                     <li>

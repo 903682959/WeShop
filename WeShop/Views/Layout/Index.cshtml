@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @*书写css样式：*@
+    @RenderSection("css", false)
+    <link href="~/css/Cbase.css" rel="stylesheet" />
+    <link href="~/css/index.css" rel="stylesheet" />
+    <link href="~/css/swiper.min.css" rel="stylesheet" />
+    @RenderSection("scripts", false)
+    @*用来书写js*@
+    <script src="~/scripts/jquery-1.7.2.min.js"></script>
+    <script src="~/scripts/base.js"></script>
+    <script src="~/scripts/swiper.min.js"></script>
+    <script src="~/scripts/index.js"></script>
+</head>
+<body>
+    @*@{ Html.RenderAction("Select", "Layout");}*@
+    <div>
+        @RenderBody()
+    </div>
+    <!--fixft开始-->
+    <div class="fixft">
+        <a href="/Home/index" class="current">
+            <span><img src="~/images/navicon_45.png" class="img1" /><img src="~/images/navicon_28.png" class="img2" /></span>
+            <i>首页</i>
+
+        </a>
+        <a href="/ProSort/index">
+            <span><img src="~/images/navicon_48.png" class="img1" /><img src="~/images/navicon_30.png" class="img2" /></span>
+
+
+            <i>分类</i>
+        </a>
+        <a href="/Cart/index">
+            <span><img src="~/images/navicon_50.png" class="img1" /><img src="~/images/navicon_32.png" class="img2" /><em>12</em></span>
+
+
+            <i>购物车</i>
+        </a>
+        <a href="/My/index">
+            <span><img src="~/images/navicon_42.png" class="img1" /><img src="~/images/navicon_35.png" class="img2" /></span>
+
+            <i>我的</i>
+
+        </a>
+    </div>
+    <!--fixft结束-->
+</body>
+
+
+</html>

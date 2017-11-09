@@ -65,5 +65,10 @@ namespace Shop.Repository
         {
            return dbcontext.SaveChanges() > 0;
         }
+
+        public object Exucutesqlcommand(string sql, params object[] para)
+        {
+            return dbcontext.Database.ExecuteSqlCommand(sql,para);
+        }
     }
 }

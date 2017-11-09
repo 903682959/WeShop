@@ -9,6 +9,7 @@ using Senparc.Weixin.MP;
 using Senparc.Weixin;
 using Senparc.Weixin.MP.AdvancedAPIs.OAuth;
 using Senparc.Weixin.MP.Helpers;
+using Shop.IService;
 
 namespace WeShop.Controllers
 {
@@ -31,6 +32,9 @@ namespace WeShop.Controllers
             //保存状态参数
             Session["state"] = state;
             string oauthorurl = OAuthApi.GetAuthorizeUrl(appID, callBackUrl, state, OAuthScope.snsapi_userinfo);
+
+
+
             //跳转到授权页面
             return Redirect(oauthorurl);
         }
@@ -60,7 +64,7 @@ namespace WeShop.Controllers
                 return Content($"错误消息:{accessToken.errmsg}");
             }
             Session["authonAccessToken"] = accessToken;
-            //以token 和oppenid来换取用户消息
+            //以token 和oppenid来换取用户信息
             try
             {
                 OAuthUserInfo usrinfo = OAuthApi.GetUserInfo(accessToken.access_token, accessToken.openid);
